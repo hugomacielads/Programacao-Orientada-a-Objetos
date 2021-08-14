@@ -1,3 +1,4 @@
+package lista1;
 public class TestaAluno {
     // public indica queo método é público
     // statis indica que o método é de classe

@@ -1,3 +1,4 @@
+package lista1;
 public class Aluno {
     public int numeroAluno, idade; // int é tipo primitivo
     public String nome; // String é um classe, por isso começa com letra minúscula

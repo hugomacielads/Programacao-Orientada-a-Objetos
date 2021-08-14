@@ -1,3 +1,4 @@
+package lista1;
 public class Rio {
     
     public String nome;
