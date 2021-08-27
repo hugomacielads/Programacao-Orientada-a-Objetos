@@ -10,29 +10,71 @@ public class Cliente {
     }
     public Cliente(String numeroConta, String numeroAgencia, float saldo, String nome){
         this.setNumeroConta(numeroConta);
-        this.setNumeroAgencia(numeroAgencia);
-        this.setSaldo(saldo);
-        this.setNome(nome);
     }
 
     public final void setNumeroConta(String numeroConta){
-        if (numeroConta.length() == 8) && (numeroConta.charAt(6) == '-'){
+        if ((numeroConta.length() == 8) && (numeroConta.charAt(6) == '-')){
             this.numeroConta = numeroConta;
-        } else {
-            System.out.println("Número da conta inválida");
+        }
+        else {
+            System.out.println("Número de conta inválido");
+            this.numeroConta = "Não definido";
         }
     }
 
-    public final void setNumeroAgencia(String numeroAgencia){
-
+    public final void setNumeroAgencia(String numeroAgencia) {
+        if ((numeroAgencia.length() == 6) && (numeroAgencia.charAt(numeroAgencia.length()-2) == '-')) {
+            this.numeroAgencia = numeroAgencia;
+        }
+        else {
+            System.out.println("Número de agência inválido");
+            this.numeroAgencia = "Não definido";
+        }
     }
 
-    public final void setSaldo(float saldo){
-
+    public final void setSaldo(float x) {
+        if (x >= 0) {
+            this.saldo = x;
+        }
+        else {
+            System.out.println("Saldo não pode ficar negativo");
+        }
     }
 
-    public final void setNome(String saldo){
-
+    public final void setNome(String nome) {
+        if (nome.length() <= 30) {
+            this.nome = nome;
+        }
+        else {
+            System.out.println("Nome muito longo");
+        }
     }
-    
+
+    public String getNumeroConta() {
+        return this.numeroConta;
+    }
+
+    public String getNumeroAgencia() {
+        return this.numeroAgencia;
+    }
+
+    public String getNome() {
+        return this.nome;
+    }
+
+    public float getSaldo() {
+        return this.saldo;
+    }
+
+    public String toString() {
+        return "Número da conta " + this.numeroConta + " Número da agência " + this.numeroAgencia + " Nome " + this.nome + " Saldo " + this.saldo; 
+    }
+
+    public void realizarDeposito(float x) {
+        this.setSaldo(this.saldo + x);
+    }
+
+    public void realizarSaque(float x) {
+        this.setSaldo(this.saldo - x);
+    }
 }
