@@ -1,6 +1,6 @@
 package lista4.rh;
 
-public class Funcionario {
+public abstract class Funcionario {
     // # - protected -> permite que a variável seja herdada para as classes filhas
     protected String nome; 
     protected String rg;
@@ -32,11 +32,10 @@ public class Funcionario {
         this.nome = nome;
     }
     public String toString(){
-        return "Rg " + this.rg + " Nome: " + this.nome + " Salário " + this.salario;
+        return " | Rg: " + this.rg + " |  Nome: " + this.nome + " |  Salário: " + this.salario;
     }
     
-    public void receberSalarioTotal(){
-        // é possível implementar este método na classe Funcionário?
-        // este método teria a mesma implementação nas classes filhas?
-    }
+    // é possível implementar este método na classe Funcionário?
+    // este método teria a mesma implementação nas classes filhas?
+    public abstract void receberSalarioTotal();
 }

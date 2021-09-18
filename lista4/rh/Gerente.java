@@ -27,6 +27,11 @@ public class Gerente extends Funcionario{
   
     @Override
     public String toString(){
-        return " Bônus: " + this.bonus + " Meta: " + this.meta + super.toString();
+        return " Bônus: " + this.bonus + " |  Meta: " + this.meta + super.toString();
+    }
+    @Override
+    public void receberSalarioTotal() {
+        float aux = this.salario + this.bonus*this.salario/100;
+        System.out.println("Salário total: " + aux);
     }
 }
